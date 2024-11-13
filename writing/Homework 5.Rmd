@@ -34,6 +34,12 @@ baltimore_homicides <- data %>%
 
 ```
 
+```{r}
+monthly_homicides <- baltimore_homicides %>% 
+  group_by(year, month)
+
+```
+
 
 
 
