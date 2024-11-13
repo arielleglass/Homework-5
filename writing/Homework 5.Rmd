@@ -1,0 +1,44 @@
+---
+title: "Homework 5"
+author: "Arielle Glass"
+date: "2024-11-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(tidyverse)
+
+```
+
+```{r}
+
+data <- read.csv("../data/homicide-data.csv")
+
+head(data)
+names(data)
+
+baltimore_homicides <- data %>%
+  filter(city == "Baltimore") %>%
+  mutate(reported_date = ymd (reported_date),
+          month = month(reported_date),
+          year = year(reported_date))
+
+
+```
+
+
+
+
+
+log based scales for sizes of points for amount size of blast
+
+group of packages for interactive: flexdashboard htmlWidgets leaflet
+dygraphs- shift location to zoom in on certain times
