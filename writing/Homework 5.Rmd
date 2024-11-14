@@ -39,6 +39,7 @@ monthly_data <- baltimore_data %>%
 monthly_data %>%
   ggplot(aes(x = date, y = homicides, fill = season)) +
   geom_bar(stat = "identity", position = "stack") +
+  scale_fill_manual(values = c("Summer" = "lightgray", "Winter" = "lightblue")) + 
   theme_dark()
 
 ```
