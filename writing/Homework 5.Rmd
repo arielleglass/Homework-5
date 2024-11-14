@@ -28,6 +28,9 @@ baltimore_data <- data %>%
           month = month(reported_date),
           year = year(reported_date))
 
+monthly_data <- baltimore_data %>%
+  group_by(year = year(reported_date), month = month(reported_date))
+
 ```
 
 
