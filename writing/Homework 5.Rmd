@@ -36,7 +36,8 @@ monthly_data <- baltimore_data %>%
     date = make_date(year, month, 1),
     season = ifelse(month(month) %in% c(5:10), "Summer", "Winter"))
 
-ggplot(monthly_data, aes(x = date, y = homicides, fill = season)) 
+monthly_data %>%
+  ggplot(aes(x = date, y = homicides, fill = season)) 
 
 ```
 
