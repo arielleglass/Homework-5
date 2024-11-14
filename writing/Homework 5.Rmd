@@ -37,9 +37,10 @@ monthly_data <- baltimore_data %>%
     season = ifelse(month(month) %in% c(5:10), "Summer", "Winter"))
 
 monthly_data %>%
-  ggplot(aes(x = date, y = homicides, fill = season)) +
-  geom_bar(stat = "identity", position = "stack") +
+  ggplot(aes(x = date, y = homicides)) +
+  geom_bar(aes(fill= season), stat = "identity", position = "stack") +
   scale_fill_manual(values = c("Summer" = "lightgray", "Winter" = "lightblue")) + 
+  geom_smooth(color = "blue", se = FALSE, size = 1, span= 0.1) +
   labs(x = "Date", y = "Monthly Homicides", fill = "Season") +
   theme_dark()
 
