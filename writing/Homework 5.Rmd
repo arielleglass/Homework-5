@@ -18,7 +18,7 @@ library(tidyverse)
 
 ```
 
-```{r}
+```{r fig.width= 15, fig.height= 2}
 
 data <- read.csv("../data/homicide-data.csv")
 
@@ -38,8 +38,8 @@ monthly_data <- baltimore_data %>%
 
 monthly_data %>%
   ggplot(aes(x = date, y = homicides, fill = season)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(x = "Date", y = "Monthly Homicides", fill = "Season")
+  geom_bar(stat = "identity", position = "stack") +
+  theme_dark()
 
 ```
 
