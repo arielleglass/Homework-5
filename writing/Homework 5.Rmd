@@ -37,7 +37,9 @@ monthly_data <- baltimore_data %>%
     season = ifelse(month(month) %in% c(5:10), "Summer", "Winter"))
 
 monthly_data %>%
-  ggplot(aes(x = date, y = homicides, fill = season)) 
+  ggplot(aes(x = date, y = homicides, fill = season)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(x = "Date", y = "Monthly Homicides", fill = "Season")
 
 ```
 
