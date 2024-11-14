@@ -31,7 +31,10 @@ baltimore_data <- data %>%
 monthly_data <- baltimore_data %>%
   group_by(year = year(date), month = month(date)) %>%
   summarize(homicides = n()) %>%
-  mutate(season = ifelse(month(month) %in% c(5:10), "Summer", "Winter"))
+  ungroup() %>%
+  mutate(
+    date = make_date(year, month, 1),
+    season = ifelse(month(month) %in% c(5:10), "Summer", "Winter"))
 
 ggplot(monthly_data, aes(x = date, y = homicides, fill = season)) 
 
