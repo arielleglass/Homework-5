@@ -22,34 +22,13 @@ library(tidyverse)
 
 data <- read.csv("../data/homicide-data.csv")
 
-head(data)
-names(data)
-
-baltimore_homicides <- data %>%
+baltimore_data <- data %>%
   filter(city == "Baltimore") %>%
   mutate(reported_date = ymd (reported_date),
           month = month(reported_date),
           year = year(reported_date))
 
-
-```
-
-```{r}
-monthly_homicides <- baltimore_homicides %>% 
-  group_by(year, month) %>%
-  summarize(total = n()) %>% 
-  mutate(
-    season = if_else(month >= 5 & month <= 10, "Summer", "Winter"),
-    season = fct_relevel(season, c("Summer", "Winter"))
-  )
-
 ```
 
 
 
-
-
-log based scales for sizes of points for amount size of blast
-
-group of packages for interactive: flexdashboard htmlWidgets leaflet
-dygraphs- shift location to zoom in on certain times
