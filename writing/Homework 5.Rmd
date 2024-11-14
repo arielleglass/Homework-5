@@ -29,7 +29,9 @@ baltimore_data <- data %>%
           year = year(reported_date))
 
 monthly_data <- baltimore_data %>%
-  group_by(year = year(reported_date), month = month(reported_date))
+  group_by(year = year(reported_date), month = month(reported_date)) %>%
+  summarize(homicides = n()) %>%
+  mutate(season = ifelse(month(month) %in% c(5:10), "Summer", "Winter"))
 
 ```
 
