@@ -24,14 +24,16 @@ data <- read.csv("../data/homicide-data.csv")
 
 baltimore_data <- data %>%
   filter(city == "Baltimore") %>%
-  mutate(reported_date = ymd (reported_date),
-          month = month(reported_date),
-          year = year(reported_date))
+  mutate(date = ymd(reported_date),
+          month = month(date),
+          year = year(date))
 
 monthly_data <- baltimore_data %>%
-  group_by(year = year(reported_date), month = month(reported_date)) %>%
+  group_by(year = year(date), month = month(date)) %>%
   summarize(homicides = n()) %>%
   mutate(season = ifelse(month(month) %in% c(5:10), "Summer", "Winter"))
+
+ggplot(monthly_data, aes(x = date, y = homicides, fill = season)) 
 
 ```
 
