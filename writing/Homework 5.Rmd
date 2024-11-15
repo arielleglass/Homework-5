@@ -44,6 +44,7 @@ monthly_data %>%
   labs(x = "Date", y = "Monthly Homicides", fill = "Season") +
   ggtitle("Homicides in Baltimore, MD") +
   xlab("Date") +
+  ylab("Monthly homicides") +
   theme_dark()
 
 
