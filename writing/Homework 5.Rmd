@@ -42,7 +42,8 @@ monthly_data %>%
   scale_fill_manual(values = c("Summer" = "lightgray", "Winter" = "lightblue")) + 
   geom_smooth(color = "blue", se = FALSE, size = 1, span= 0.1) +
   labs(x = "Date", y = "Monthly Homicides", fill = "Season") +
-  theme_dark()
+  ggtitle("Homicides in Baltimore, MD")
+  
 
 ```
 
