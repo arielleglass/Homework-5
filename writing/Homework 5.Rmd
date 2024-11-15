@@ -43,8 +43,8 @@ monthly_data %>%
   geom_smooth(color = "blue", se = FALSE, size = 1, span= 0.1) +
   labs(x = "Date", y = "Monthly Homicides", fill = "Season") +
   ggtitle("Homicides in Baltimore, MD") +
-  xlab("Date") +
-  ylab("Monthly homicides") +
+  geom_vline(xintercept = as.Date("2015-04-12"), color = "red", linetype = "dashed", size = 1) +
+  annotate("text", x = as.Date("2015-04-12"), y = 42, label = "Arrest of\nFreddie Gray", color = "white") +
   theme_dark()
 
 
