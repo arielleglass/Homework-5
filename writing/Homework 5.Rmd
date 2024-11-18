@@ -44,7 +44,7 @@ monthly_data %>%
   labs(x = "Date", y = "Monthly Homicides", fill = "Season") +
   ggtitle("Homicides in Baltimore, MD") +
   geom_vline(xintercept = as.Date("2015-04-12"), color = "red", linetype = "dashed", size = 1) +
-  annotate("text", x = as.Date("2015-04-12"), y = 42, label = "Arrest of\nFreddie Gray", color = "white") +
+  annotate("text", x = as.Date("2014-11-12"), y = 40, label = "Arrest of\nFreddie Gray", color = "white") +
   theme_dark()
 
 
