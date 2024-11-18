@@ -18,7 +18,7 @@ library(tidyverse)
 
 ```
 
-```{r fig.width= 15, fig.height= 2}
+```{r fig.width= 15, fig.height= 3}
 
 data <- read.csv("../data/homicide-data.csv")
 
@@ -45,7 +45,11 @@ monthly_data %>%
   ggtitle("Homicides in Baltimore, MD") +
   geom_vline(xintercept = as.Date("2015-04-12"), color = "red", linetype = "dashed", size = 1) +
   annotate("text", x = as.Date("2014-11-12"), y = 40, label = "Arrest of\nFreddie Gray", color = "white") +
-  theme_dark()
+  theme_dark() +
+   theme(
+    legend.position = "bottom",                  
+    plot.title = element_text(hjust = 0.5)
+  )
 
 
 ```
