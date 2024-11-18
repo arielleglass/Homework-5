@@ -41,7 +41,7 @@ monthly_data %>%
   geom_bar(aes(fill= season), stat = "identity", position = "stack") +
   scale_fill_manual(values = c("Summer" = "lightgray", "Winter" = "lightblue")) + 
   geom_smooth(color = "blue", se = FALSE, size = 1, span= 0.1) +
-  labs(x = "Date", y = "Monthly Homicides", fill = "Season") +
+  labs(x = "Date", y = "Monthly Homicides", fill = NULL) +
   ggtitle("Homicides in Baltimore, MD") +
   geom_vline(xintercept = as.Date("2015-04-12"), color = "red", linetype = "dashed", size = 1) +
   annotate("text", x = as.Date("2014-11-12"), y = 40, label = "Arrest of\nFreddie Gray", color = "white") +
